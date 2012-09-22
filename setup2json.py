@@ -4,6 +4,9 @@ import sys
 # Giant hack to convert Cygwin's "setup" file to a JSON
 # file, you know, so someone can use it for something with a
 # reasonable amount of work :|
+# started it at ~12:15, roughly finished with a decent
+# draft at ~12:35. Not bad, even if it is a giant
+# hack...
 
 if len(sys.argv) > 1:
     setupfile = file(sys.argv[1], 'r')
@@ -16,7 +19,6 @@ pkg = None
 prev_flag = False
 for line in setupfile:
     line = line[0:-1]
-    print line
     if '@ ' == line[0:2]:
         pkg_name = line[2:]
         packages[pkg_name] = {}
